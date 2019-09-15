@@ -1,23 +1,4 @@
 import Route from '@ember/routing/route';
-import { A } from '@ember/array';
-import EmberObject, { computed } from '@ember/object'; 
-import { dasherize } from '@ember/string';
-
-let Bill = EmberObject.extend({
-  bill: '',
-  created_at: '',
-  id: '',
-  organization: {},
-  result: '',
-  start_date: '',
-  updated_at: '',
-  votes: [],
-
-  slug: computed('identifier', function(){
-    return dasherize(this.bill.identifier);
-    // or this.id
-  })
-});
 
 let Vote = EmberObject.extend({
   result: '',
@@ -25,71 +6,9 @@ let Vote = EmberObject.extend({
   votes: []
 });
 
-
-
-export default Route.extend({ 
+export default Route.extend({
   model() {
-    let bills = [
-      {
-        "counts": [],
-        "bill": {
-          "id": "ocd-bill/0211e7c6-7d3e-4a85-9f87-8c4534ecfbeb",
-          "identifier": "Or2019-226"
-        },
-        "id": "ocd-vote/9f21801f-de45-49bf-b664-cd8c1b92849d",
-        "motion_text": "Passed",
-        "result": "pass",
-        "motion_classification": [],
-        "organization": {
-          "name": "Chicago City Council",
-          "id": "ocd-organization/ef168607-9135-4177-ad8e-c1f7a4806c3a"
-        },
-        "updated_at": "2019-07-15T13:38:29.739168+00:00",
-        "extras": {},
-        "created_at": "2019-07-15T13:22:51.877191+00:00",
-        "start_date": "2019-06-12"
-      },
-      {
-        "counts": [],
-        "bill": {
-          "id": "ocd-bill/260915d6-2411-4280-b0bf-41eea28a5546",
-          "identifier": "R2019-348"
-        },
-        "id": "ocd-vote/d5297bf3-ee1a-46e5-8b48-3c0e5e550c29",
-        "motion_text": "Adopted",
-        "result": "pass",
-        "motion_classification": [],
-        "organization": {
-          "name": "Chicago City Council",
-          "id": "ocd-organization/ef168607-9135-4177-ad8e-c1f7a4806c3a"
-        },
-        "updated_at": "2019-07-26T03:26:54.039585+00:00",
-        "extras": {},
-        "created_at": "2019-07-26T03:26:54.039561+00:00",
-        "start_date": "2019-07-24"
-      },
-      {
-        "counts": [],
-        "bill": {
-          "id": "ocd-bill/31c0af70-0ce0-42b2-8f63-e7c24853dd00",
-          "identifier": "O2019-3901"
-        },
-        "id": "ocd-vote/515128d4-f5da-4523-9390-c5e0714c8679",
-        "motion_text": "Passed as Substitute",
-        "result": "pass",
-        "motion_classification": [],
-        "organization": {
-          "name": "Chicago City Council",
-          "id": "ocd-organization/ef168607-9135-4177-ad8e-c1f7a4806c3a"
-        },
-        "updated_at": "2019-07-08T13:53:55.963673+00:00",
-        "extras": {},
-        "created_at": "2019-06-13T03:01:59.594820+00:00",
-        "start_date": "2019-06-12"
-      }
-    ]
-
-    let vote = {
+    let result = {
       "counts": [],
       "id": "ocd-vote/515128d4-f5da-4523-9390-c5e0714c8679",
       "result": "pass",
@@ -429,30 +348,8 @@ export default Route.extend({
       "updated_at": "2019-07-08T13:53:55.963673+00:00",
       "bill_action": null
     }
-  
-
-    let display_results = [];
-
-    bills.forEach(function(element) {
-
-      let current_bill = Bill.create({
-        bill: element.bill,
-        created_at: element.created_at,
-        id: element.id,
-        organization: element.organization,
-        result: element.result,
-        start_date: element.start_date,
-        updated_at: element.updated_at,
-        votes: vote,
-      })
-      display_results.push(current_bill)
-    });
-    
-    console.log(display_results)
-    return A(display_results); 
   }
 
-  // https://ocd.datamade.us/bills/?id=ocd-bill/19737862-9de5-4b8a-93a2-445d408beeec
-
-  
 });
+
+

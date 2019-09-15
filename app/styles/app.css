@@ -27,7 +27,7 @@ a {
 
 @media screen and (min-width: 100em) {
   .rr-container {
-    width: 50%;
+    width: 70%;
   }
 }
 
@@ -102,11 +102,11 @@ width: calc( 100% / 1.5); /* .w-two-thirds */
   margin-bottom: 10px;
 }
 
-.rr-band-link > .rr-pointer { 
+.rr-bill-link > .rr-pointer { 
   margin-left: 5px;
   display: none;
 }
 
-.rr-band-link.active > .rr-pointer { 
+.rr-bill-link.active > .rr-pointer { 
   display: inline-block;
 }
