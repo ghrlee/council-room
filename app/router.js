@@ -7,8 +7,13 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('votes');
-  this.route('bills');
+  this.route('bills', function() {
+    this.route('votes');
+
+    this.route('bill', {
+      path: ':slug'
+    });
+  });
 });
 
 export default Router;

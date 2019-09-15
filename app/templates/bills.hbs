@@ -1,6 +1,11 @@
-<ul class="list pl3">
-  {{#each model as |bill|}}
-  {{log bill}}
-    <li>{{bill.results.firstObject.title}}</li>
+<ul class="vote-list pa2">
+  {{#each model as |vote|}}
+    <li>{{vote.bill.identifier}}
+      <ul class="sublist pv1">
+        <li class="pb3">Bill Created: {{vote.start_date}}<span class="fr">{{vote.motion_text}}</span></li>
+        {{!-- idea is to put vote counts (30 to 70) to the right in place of motion text --}}
+        {{!-- a vote result has a start_date but empty end_date what does that mean? --}}
+      </ul>
+    </li>
   {{/each}}
-</ul>
+</ul> 
