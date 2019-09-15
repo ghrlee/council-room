@@ -1,6 +1,5 @@
-// app/routes/application.js
-import Route from '@ember/routing/route'; 
-import EmberObject from '@ember/object'; 
+import Route from '@ember/routing/route';
+import EmberObject from '@ember/object'
 import { A } from '@ember/array';
 
 let Bill = EmberObject.extend({
@@ -79,4 +78,8 @@ export default Route.extend({
     });
 
   return A([blackDog, yellowLedbetter, pretender]); }
+
+  // https://ocd.datamade.us/bills/?id=ocd-bill/19737862-9de5-4b8a-93a2-445d408beeec
+
+  
 });

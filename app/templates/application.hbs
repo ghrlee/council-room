@@ -3,15 +3,12 @@
     <h1 class="rr-app-title">Council Room<small class="rr-subtitle"> with votes</small></h1>
   </div>
   <div class="rr-main-content">
-    <ul class="vote-list pa2">
-      {{#each model as |vote|}}
-        <li>{{vote.bill.identifier}}
-          <ul class="sublist pv1">
-            <li class="pb3">Bill Created: {{vote.start_date}}<span class="fr">{{vote.motion_text}}</span></li>
-            {{!-- idea is to put vote counts (30 to 70) to the right in place of motion text --}}
-          </ul>
-        </li>
-      {{/each}}
-    </ul> 
+    <nav class="rr-navbar" role="navigation">
+      <ul class="rr-nav">
+        <li class="rr-navbar-item">{{link-to "Votes" "votes"}}</li>
+        <li class="rr-navbar-item">{{link-to "Bills" "bills"}}</li>
+      </ul> 
+    </nav>
+    {{outlet}}
   </div>
 </div>

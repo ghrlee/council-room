@@ -1,0 +1,6 @@
+<ul class="list pl3">
+  {{#each model as |bill|}}
+  {{log bill}}
+    <li>{{bill.results.firstObject.title}}</li>
+  {{/each}}
+</ul>
