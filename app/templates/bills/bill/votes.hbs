@@ -1,0 +1,9 @@
+<ul class="vote-list">
+  <li class="pb4">Result: <em class="fr pr4">{{model.result}}</em></li>
+  {{#each model.votes.votes as |vote|}}
+    <li class="rr-list-item pv2">
+
+      {{vote.voter_name}} <em class="fr pr4">{{vote.option}}</em>
+    </li>
+  {{/each}}
+</ul>

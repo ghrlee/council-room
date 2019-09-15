@@ -1,7 +1,7 @@
 <div class="rr-sidebar">
   <ul class="rr-list">
     {{#each model as |bill|}}
-      <li class="rr-list-item">
+      <li class="rr-list-item pa3">
         {{#link-to "bills.bill.votes" bill class="rr-bill-link"}}
           {{bill.bill.identifier}}:{{bill.start_date}}
           <span class="rr-pointer">

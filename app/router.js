@@ -12,7 +12,6 @@ Router.map(function() {
       this.route('votes');
     });
   });
-  this.route('votes');
 });
 
 export default Router;
