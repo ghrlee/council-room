@@ -1,9 +1,8 @@
 <ul class="vote-list">
-  <li class="pb4">Result: <em class="fr pr4">{{model.result}}</em></li>
+  <li class="pb3">Result: <em class="fr pr6">{{model.result}}</em></li>
   {{#each model.votes.votes as |vote|}}
     <li class="rr-list-item pv2">
-
-      {{vote.voter_name}} <em class="fr pr4">{{vote.option}}</em>
+      {{vote.voter_name}} <em class="fr pr6">{{vote.option}}</em>
     </li>
   {{/each}}
 </ul>
