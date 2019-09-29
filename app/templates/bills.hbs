@@ -1,8 +1,14 @@
 <div class="rr-sidebar">
   <ul class="rr-list">
+  
+    {{log "what"}}
     {{#each model as |bill|}}
       <li class="rr-list-item pa3">
+        {{log "in template"}}
+        {{log bill}}
         {{#link-to "bills.bill.votes" bill class="rr-bill-link"}}
+          {{log bill}}
+          
           {{bill.bill.identifier}}:{{bill.start_date}}
           <span class="rr-pointer">
             {{fa-icon "angle-right"}}
